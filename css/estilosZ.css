@@ -1,0 +1,137 @@
+/* Estilos generales */
+body {
+  background: #f7f7f7;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor de registro y login */
+.registro-container,
+.registro-resultado,
+.container-2fa {
+  background: #fff;
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 35px 40px 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+  border: 1px solid #e1e1e1;
+  text-align: center;
+}
+
+/* Títulos */
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+/* Mensaje de bienvenida */
+.bienvenido {
+  color: #2980b9;
+  font-size: 18px;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+
+/* Etiquetas */
+label {
+  color: #34495e;
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Inputs y selects */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  background: #fafbfc;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border-color: #2980b9;
+  outline: none;
+  background: #fff;
+}
+
+/* Botón */
+button[type="submit"],
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background: #206090;
+}
+
+/* Estilos para resultado de registro */
+.registro-resultado h2 {
+  color: #27ae60;
+  margin-bottom: 18px;
+}
+.registro-resultado p {
+  color: #34495e;
+  margin-bottom: 18px;
+}
+.registro-resultado img {
+  margin: 18px 0 10px 0;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  background: #fafbfc;
+}
+.registro-resultado code {
+  font-size: 18px;
+  color: #2c3e50;
+  background: #f4f4f4;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.registro-resultado a {
+  display: inline-block;
+  margin-top: 18px;
+  color: #2980b9;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.registro-resultado a:hover {
+  color: #206090;
+  text-decoration: underline;
+}
+.registro-resultado .error {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+/* Estilos para 2FA */
+.container-2fa input[type="text"] {
+  letter-spacing: 2px;
+  font-weight: bold;
+}

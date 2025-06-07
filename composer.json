@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.29",
+        "sonata-project/google-authenticator": "^2.3"
+    }
+}
