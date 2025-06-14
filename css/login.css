@@ -1,0 +1,114 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo general */
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor del formulario */
+.login-container {
+  background: rgba(255,255,255,0.95);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  border-radius: 18px;
+  width: 350px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título */
+.login-container h2 {
+  margin-bottom: 1.5rem;
+  color: #2980b9;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Campos del formulario */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 1rem;
+  border: 1px solid #b0c4de;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+  border: 1.5px solid #2980b9;
+  outline: none;
+}
+
+/* Botón */
+.login-container input[type="submit"], 
+.login-container button {
+  width: 100%;
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.login-container input[type="submit"]:hover,
+.login-container button:hover {
+  background: #2573a6;
+}
+
+/* Enlaces */
+.login-container .register-link, 
+.login-container a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #2980b9;
+  font-size: 0.97rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.login-container .register-link:hover,
+.login-container a:hover {
+  color: #145074;
+  text-decoration: underline;
+}
+
+/* Mensajes de error */
+.login-container .error-message {
+  color: #d8000c;
+  background: #ffbaba;
+  border: 1px solid #d8000c;
+  border-radius: 6px;
+  padding: 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.98rem;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .login-container {
+    padding: 1.2rem 0.5rem;
+    width: 95vw;
+  }
+}

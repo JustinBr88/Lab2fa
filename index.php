@@ -28,16 +28,29 @@ if ($tolog == "true" && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['autenticado'] = "SI";
             $_SESSION['Usuario'] = $Logearme->getUsuario();
 
-           $nombreUsuario = $Logearme->getUsuario();
-           $sql = "SELECT id, secret_2fa FROM usuarios WHERE Usuario = '" . addslashes($nombreUsuario) . "'";
-
+            $nombreUsuario = $Logearme->getUsuario();
+            $sql = "SELECT id, secret_2fa FROM usuarios WHERE Usuario = '" . addslashes($nombreUsuario) . "'";
             $result = $db->query($sql);
             $row = $result ? $result->fetch(PDO::FETCH_ASSOC) : null;
 
             if ($row && !empty($row['secret_2fa'])) {
                 $_SESSION['secret_2fa'] = $row['secret_2fa'];
                 $_SESSION['usuario_id'] = $row['id'];
+
                 $Logearme->registrarIntentos();
+
+                // === Trazabilidad: registrar login exitoso ===
+                // Se asume que tienes un objeto PDO en $db->getConexion()
+                try {
+                    $pdo = $db->getConexion();
+                    $stmt = $pdo->prepare("INSERT INTO trazabilidad (usuario_id, accion, ip) VALUES (?, 'login', ?)");
+                    $stmt->execute([$row['id'], $ipRemoto]);
+                    // Si quieres registrar detalles extra, añade un cuarto parámetro.
+                } catch (Exception $e) {
+                    // Puedes agregar logs de error si lo deseas, pero no interrumpas el login.
+                }
+                // === Fin trazabilidad ===
+
                 redireccionar("codigo_2fa.php");
             } else {
                 echo "❌ No se encontró un secreto 2FA válido para este usuario.";
